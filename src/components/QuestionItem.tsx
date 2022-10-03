@@ -1,6 +1,10 @@
 import { QuizQuestion } from "../data/types";
 
-function QuestionItem({ question }: { question: QuizQuestion }) {
+interface Props {
+  question: QuizQuestion;
+}
+
+function QuestionItem({ question }: Props) {
   const { id, prompt, answers, correctIndex } = question;
 
   const options = answers.map((answer, index) => (

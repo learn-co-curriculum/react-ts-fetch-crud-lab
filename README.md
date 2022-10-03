@@ -15,8 +15,11 @@ rest of our users.
 
 There's some starter code set up, so you won't need to create any new components
 for this lab. All typing necessary for the starter code is also already done for
-you. We recommend that you first take the time to look through the starter code
-and make sure you understand how everything is working and typed.
+you. Take note of the `QuizQuestion` interface defined in `src/data/types.ts`.
+You may need to use this type when working through the lab.
+
+We recommend that you first take the time to look through the starter code and
+make sure you understand how everything is working and typed.
 
 After you've familiarized yourself with the code, your goal will be to work with
 `fetch` and interact with our quiz API to perform the necessary CRUD operations
@@ -78,6 +81,12 @@ In addition to updating the form, you should display the new question in the
 **NOTE**: because `json-server` doesn't have any validations, if you make any
 mistakes and send the body of your request in the wrong format, you'll need to
 manually delete the entry from the `db.json` file.
+
+> **Bonus Challenge**: There isn't much indication that the user successfully
+> submitted a new question - they have to manually flip back to the question
+> list to make sure. From a UX perspective, this isn't great. Consider making it
+> more clearer by clearing the form after they've submitted. Or, you could even
+> go a step further and change back to the questions page after submission.
 
 ### DELETE /questions/:id
 

@@ -1,5 +1,14 @@
 import React, { useState } from "react";
 
+interface QuizFormData {
+  prompt: string;
+  answer1: string;
+  answer2: string;
+  answer3: string;
+  answer4: string;
+  correctIndex: string;
+}
+
 function QuestionForm() {
   const [formData, setFormData] = useState({
     prompt: "",
@@ -7,7 +16,7 @@ function QuestionForm() {
     answer2: "",
     answer3: "",
     answer4: "",
-    correctIndex: 0,
+    correctIndex: "",
   });
 
   function handleChange(
