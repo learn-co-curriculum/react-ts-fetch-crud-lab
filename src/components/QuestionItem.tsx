@@ -1,6 +1,13 @@
+import React from "react";
 import { QuizQuestion } from "../data/types";
 
-function QuestionItem({ question }: { question: QuizQuestion }) {
+interface Props {
+  question: QuizQuestion;
+  onDeleteClick(id: number): void;
+  onAnswerChange(id: number, correctIndex: number): void;
+}
+
+function QuestionItem({ question, onDeleteClick, onAnswerChange }: Props) {
   const { id, prompt, answers, correctIndex } = question;
 
   const options = answers.map((answer, index) => (
@@ -9,15 +16,25 @@ function QuestionItem({ question }: { question: QuizQuestion }) {
     </option>
   ));
 
+  function handleDeleteClick() {
+    onDeleteClick(id);
+  }
+
+  function handleAnswerChange(event: React.ChangeEvent<HTMLSelectElement>) {
+    onAnswerChange(id, parseInt(event.target.value));
+  }
+
   return (
     <li>
       <h4>Question {id}</h4>
       <h5>Prompt: {prompt}</h5>
       <label>
         Correct Answer:
-        <select defaultValue={correctIndex}>{options}</select>
+        <select defaultValue={correctIndex} onChange={handleAnswerChange}>
+          {options}
+        </select>
       </label>
-      <button>Delete Question</button>
+      <button onClick={handleDeleteClick}>Delete Question</button>
     </li>
   );
 }

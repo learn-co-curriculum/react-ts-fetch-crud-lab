@@ -1,13 +1,23 @@
 import React, { useState } from "react";
+import { QuizQuestion } from "../data/types";
+
+interface QuizFormData {
+  prompt: string;
+  answer1: string;
+  answer2: string;
+  answer3: string;
+  answer4: string;
+  correctIndex: string;
+}
 
 function QuestionForm() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<QuizFormData>({
     prompt: "",
     answer1: "",
     answer2: "",
     answer3: "",
     answer4: "",
-    correctIndex: 0,
+    correctIndex: "",
   });
 
   function handleChange(
@@ -21,7 +31,23 @@ function QuestionForm() {
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    console.log(formData);
+    const questionData = {
+      prompt: formData.prompt,
+      answers: [
+        formData.answer1,
+        formData.answer2,
+        formData.answer3,
+        formData.answer4,
+      ],
+      correctIndex: parseInt(formData.correctIndex),
+    };
+    fetch("http://localhost:4000/questions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(questionData),
+    });
   }
 
   return (
