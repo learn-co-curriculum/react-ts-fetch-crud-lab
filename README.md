@@ -14,8 +14,13 @@ edit, and delete the existing quizzes so they can change the content for the
 rest of our users.
 
 There's some starter code set up, so you won't need to create any new components
-for this lab. Your goal will be to work with `fetch` and interact with our quiz
-API to perform the necessary CRUD operations to complete these deliverables.
+for this lab. All typing necessary for the starter code is also already done for
+you. We recommend that you first take the time to look through the starter code
+and make sure you understand how everything is working and typed.
+
+After you've familiarized yourself with the code, your goal will be to work with
+`fetch` and interact with our quiz API to perform the necessary CRUD operations
+to complete these deliverables.
 
 ## Setup
 
@@ -28,6 +33,9 @@ this is in the `package.json` file). Once your server is running, go to
 question data.
 
 Then, in a new terminal tab, run `npm start` to run the React application.
+
+Don't forget to `npm test` once you believe you're finished to ensure you've
+completed all the deliverables.
 
 ## Deliverables
 
@@ -111,4 +119,5 @@ request's url!
 - [React `fetch` with `useEffect` Example][react ajax]
 - [React State and Arrays](https://github.com/learn-co-curriculum/react-hooks-state-arrays)
 
-[react ajax]: https://reactjs.org/docs/faq-ajax.html#example-using-ajax-results-to-set-local-state
+[react ajax]:
+  https://reactjs.org/docs/faq-ajax.html#example-using-ajax-results-to-set-local-state
