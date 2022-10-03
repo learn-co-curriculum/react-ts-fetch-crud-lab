@@ -1,6 +1,8 @@
-import React from "react";
+interface Props {
+  onChangePage(page: string): void;
+}
 
-function AdminNavBar({ onChangePage }) {
+function AdminNavBar({ onChangePage }: Props) {
   return (
     <nav>
       <button onClick={() => onChangePage("Form")}>New Question</button>
