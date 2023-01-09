@@ -14,8 +14,16 @@ edit, and delete the existing quizzes so they can change the content for the
 rest of our users.
 
 There's some starter code set up, so you won't need to create any new components
-for this lab. Your goal will be to work with `fetch` and interact with our quiz
-API to perform the necessary CRUD operations to complete these deliverables.
+for this lab. All typing necessary for the starter code is also already done for
+you. Take note of the `QuizQuestion` interface defined in `src/data/types.ts`.
+You may need to use this type when working through the lab.
+
+We recommend that you first take the time to look through the starter code and
+make sure you understand how everything is working and typed.
+
+After you've familiarized yourself with the code, your goal will be to work with
+`fetch` and interact with our quiz API to perform the necessary CRUD operations
+to complete these deliverables.
 
 ## Setup
 
@@ -28,6 +36,9 @@ this is in the `package.json` file). Once your server is running, go to
 question data.
 
 Then, in a new terminal tab, run `npm start` to run the React application.
+
+Don't forget to `npm test` once you believe you're finished to ensure you've
+completed all the deliverables.
 
 ## Deliverables
 
@@ -71,6 +82,12 @@ In addition to updating the form, you should display the new question in the
 mistakes and send the body of your request in the wrong format, you'll need to
 manually delete the entry from the `db.json` file.
 
+> **Bonus Challenge**: There isn't much indication that the user successfully
+> submitted a new question - they have to manually flip back to the question
+> list to make sure. From a UX perspective, this isn't great. Consider making it
+> more clearer by clearing the form after they've submitted. Or, you could even
+> go a step further and change back to the questions page after submission.
+
 ### DELETE /questions/:id
 
 When the user clicks the 'View Questions' button, a list of all the questions
@@ -111,4 +128,5 @@ request's url!
 - [React `fetch` with `useEffect` Example][react ajax]
 - [React State and Arrays](https://github.com/learn-co-curriculum/react-hooks-state-arrays)
 
-[react ajax]: https://reactjs.org/docs/faq-ajax.html#example-using-ajax-results-to-set-local-state
+[react ajax]:
+  https://reactjs.org/docs/faq-ajax.html#example-using-ajax-results-to-set-local-state

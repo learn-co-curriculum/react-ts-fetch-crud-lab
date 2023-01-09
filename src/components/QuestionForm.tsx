@@ -1,23 +1,34 @@
 import React, { useState } from "react";
 
-function QuestionForm(props) {
+interface QuizFormData {
+  prompt: string;
+  answer1: string;
+  answer2: string;
+  answer3: string;
+  answer4: string;
+  correctIndex: string;
+}
+
+function QuestionForm() {
   const [formData, setFormData] = useState({
     prompt: "",
     answer1: "",
     answer2: "",
     answer3: "",
     answer4: "",
-    correctIndex: 0,
+    correctIndex: "",
   });
 
-  function handleChange(event) {
+  function handleChange(
+    event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) {
     setFormData({
       ...formData,
       [event.target.name]: event.target.value,
     });
   }
 
-  function handleSubmit(event) {
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     console.log(formData);
   }

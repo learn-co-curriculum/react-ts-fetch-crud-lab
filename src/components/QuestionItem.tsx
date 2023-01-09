@@ -1,6 +1,10 @@
-import React from "react";
+import { QuizQuestion } from "../data/types";
 
-function QuestionItem({ question }) {
+interface Props {
+  question: QuizQuestion;
+}
+
+function QuestionItem({ question }: Props) {
   const { id, prompt, answers, correctIndex } = question;
 
   const options = answers.map((answer, index) => (
